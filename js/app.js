@@ -16,8 +16,8 @@ const isLiked = (id) => {
 };
 
 const addToLiked = (id) => {
-    likedPostsId.plus(id); 
-    showPosts(posts);
+  likedPostsId.includes(id);
+  showPosts(posts);
 };
 
 const reportPost = (id) => {
@@ -62,7 +62,7 @@ const createPost = (post) => {
                     target="_blank"
                     class="post__avatar"
                   >
-                    <img src="${image}" alt="User Picture" />
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="User Picture" alt="User Picture" />
                   </a>
                   <a href="#" class="post__user">phero</a>
                 </div>
@@ -96,7 +96,7 @@ const createPost = (post) => {
                   <div class="post__indicators"></div>
 
                   <button class="post__button post__button--align-right" onclick="reportPost(${
-                      post.id
+                    post.id
                   })">
                     <i class="fa-solid fa-ban"></i>
                   </button>
@@ -159,7 +159,7 @@ const displayReportedPosts = () => {
 };
 
 const loadPosts = async () =>{
-  let data = await fetch('../data/posts.json');
+  let data = await fetch('data/posts.json');
   posts = await data.json();
   showPosts(posts);
 }
